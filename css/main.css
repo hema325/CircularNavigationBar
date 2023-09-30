@@ -1,0 +1,68 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-color: #17a2b8;
+    overflow: hidden;
+}
+
+nav {
+    position: absolute;
+    top: 200px;
+    right: 20px;
+    z-index: 100;
+    height: 260px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: top 400ms;
+}
+
+nav .nav-btn,
+nav a {
+    background-color: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    cursor: pointer;
+    color: #0b1e23;
+    box-shadow: 0 0px 5px rgb(0 0 0 / .1);
+    caret-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav.dragging {
+    transition: none;
+}
+
+nav .nav-btn {
+    font-size: 35px;
+    transition: transform 400ms;
+}
+
+nav.active .nav-btn {
+    transform: rotate(315deg);
+}
+
+nav a {
+    text-decoration: none;
+    font-size: 24px;
+    position: absolute;
+    z-index: -1;
+    transition: transform 400ms;
+}
+
+nav a i {
+    transform: rotate(calc(var(--i) * (-360deg / 8)));
+}
+
+nav.active a {
+    transform: rotate(calc(var(--i) * 360deg / 8)) translatey(100px);
+}
